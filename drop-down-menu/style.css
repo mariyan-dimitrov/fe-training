@@ -1,0 +1,116 @@
+@import url('../pet-project/typography.css');
+
+h2 {
+    display: inline-block;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigation ul {
+    margin: 0;
+    padding: 0;
+}
+
+.navigation li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: block;
+}
+
+.navigation a {
+    text-decoration: none;
+    display: block;
+    color: #000;
+    background: #FFF;
+    border:1px solid gray;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+}
+
+.navigation__dropDown {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.navigation__dropDown > li {
+    padding: 0.5rem;
+}
+
+.navigation__dropDown ul {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.navigation__dropDown ul li {
+    padding: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.navigation__dropDown a {
+    min-width: 7rem;
+}
+
+.navigation__dropDown > li ul {
+    position: absolute;
+    top:100%;
+}
+
+.navigation__dropDown > li > ul>li {
+    position: relative;
+}
+
+
+.navigation__dropDown li:hover > ul {
+    opacity: 1;
+    transition: .3s ease all;
+
+    pointer-events: all;
+}
+
+.navigation__dropDown li:hover > a  {
+    color: #FFF;
+    background: #000;
+}
+
+.navigation__dropDown  li > ul ul {
+    position: absolute;
+    right: 100%;
+    top:0;
+}
+
+#main-nav-toggle {
+    display: none;
+}
+
+#toggle {
+    display: none;
+}
+
+
+@media screen and (max-width:800px) {
+    
+    #toggle {
+        display: block;
+        text-align: center;
+    }
+
+    .navigation {
+        display: block;
+    }
+
+    .navigation__dropDown {
+        display: block;
+        border-top: 2px solid;
+        border-bottom: 2px solid;
+    }
+
+    #main-nav-toggle:checked + .navigation__dropDown {
+        display: none;
+    }
+}
